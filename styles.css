@@ -7,6 +7,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 .row {
     width: 100%;
     max-width: 1300px;
@@ -17,6 +22,10 @@
 a {
     text-decoration: none;
     color: #242424;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 ul {
@@ -87,7 +96,16 @@ hr {
     cursor: not-allowed;
 }
 
+.purple__hover:hover {
+    color: #6415FF;
+}
+
 /* Landing */
+
+.landing__container {
+    padding-bottom: 120px;
+    animation: come__left 800ms 200ms forwards;
+}
 
 .nav__row {
     width: 100%;
@@ -114,6 +132,10 @@ hr {
     font-weight: 700;
     display: flex;
     align-items: center;
+}
+
+.nav__link:hover {
+    color: #6415FF;
 }
 
 .nav__logo--wrap {
@@ -153,10 +175,12 @@ hr {
     align-items: center;
     justify-content: center;
     transform: translateX(150%) translateZ(0px);
-    transition: all 300ms ease;
+    transition: transform 300ms ease;
+    opacity: 0;
 }
 
 .menu--open .menu__backdrop {
+    opacity: 1;
     transform: translateX(0);
     transform: translateY(0);
 }
@@ -226,8 +250,10 @@ hr {
 }
 
 /* Features */
-.landing__container {
-    padding-bottom: 120px;
+
+.features__container {
+    padding: 80px;
+    animation: come__right 800ms 200ms forwards;
 }
 
 .features__heading {
@@ -307,6 +333,7 @@ hr {
 
 .work__container {
     display: flex;
+    animation: come__left 800ms 200ms forwards;
 }
 
 .work__section--heading {
@@ -332,6 +359,7 @@ hr {
 /* Steps */
 .steps__container {
     display: flex;
+    animation: come__right 800ms 200ms forwards;
 }
 
 .steps__img {
@@ -382,6 +410,11 @@ hr {
 }
 
 /* Pricing */
+
+.pricing__container {
+    padding-bottom: 120px;
+    animation: come__left 800ms 200ms forwards;
+}
 
 .plans {
     display: flex;
@@ -577,6 +610,27 @@ footer {
     width: 100%;
     padding: 24px;
 }
+
+/* Animations */
+
+@keyframes come__left {
+    0% {
+        transform: translateX(-2400px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes come__right {
+    0% {
+        transform: translateX(2400px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 
 @media (max-width: 1024px) {
 
